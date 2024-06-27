@@ -1,0 +1,97 @@
+<app-header></app-header>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mt-3">
+                <img class="img-fluid mt-3"  style="width: 500px; height: 400px;" src="https://img.freepik.com/premium-photo/woman-shopping-online-internet-marketplace-browsing-sale-items-modern-lifestyle-use-credit-card-online-payment-from-wallet-protected-by-utmost-cyber-security-software_31965-255417.jpg" alt="Delivery Charges">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="modal-content mt-1">
+                <div class="modal-body">
+                    <div class="container mt-4">
+                        <div class="">
+                            <div class="col-12 mb-3 mt-3">
+                                <form *ngIf="!proceedToPayStatus" [formGroup]="CheckoutForm">
+                                    <h5>Enter your shipping details</h5>
+                                    <div class="row ">
+                                        <div class="mb-3 ">
+                                            <input type="text" class="form-control" placeholder="Name"  name="name" formControlName="name">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" class="form-control" placeholder="email"formControlName="email" name="email">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" class="form-control" placeholder="mobilenumber"formControlName="mobile" name="mobile">
+                                        </div>
+                                      </div>
+                                    <div class="col-12 mb-3">
+                                        <input type="text" class="form-control" placeholder="Address"formControlName="currentaddress" name="currentaddress">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <input type="text" class="form-control" placeholder="Permanent Address"formControlName="address" name="adress">
+                                    </div>
+                                    
+                                    <div class="mt-2">
+                                        <ngx-paypal></ngx-paypal>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button"(click)="cancel()" class="btn btn-secondary me-3" data-bs-dismiss="modal">Close</button>
+                                        <button (click)="proceedToPay()"  type="submit" class="btn btn-dark">Confirm Details</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="proceedToPayStatus" >
+                <div class="border shadow p-4   p-3"   >
+                    <div class="p-2">
+                    <div class="row">
+
+                    <div class="col-md-6">
+
+                    <h3 class="rounded text-center" style="color: rgb(204, 153, 252);">
+                        Confirm <span style="color: rgb(241, 169, 218);">Details</span>
+                    </h3>
+                    <h6 >Name <div class="text-primary">{{CheckoutForm.value.name}}</div></h6>
+                    <h6 >Email <div class="text-primary">{{CheckoutForm.value.email}}</div></h6>
+                    <h6>Mobile<div class="text-primary">{{CheckoutForm.value.mobile}}</div></h6>
+                    <h6  >Address <div class="text-primary">{{CheckoutForm.value.currentaddress}}</div></h6>
+                    <h6 >Permanent Address<div class="text-primary">{{CheckoutForm.value.address}}</div></h6> 
+                </div>
+                <div class="col-md-6">
+                    <img style="width: 200px;height: 200px;" src="https://png.pngtree.com/png-clipart/20230925/original/pngtree-fast-shipping-icon-delivery-truck-cartoon-illustration-on-isolated-background-vector-png-image_12863133.png" alt="">
+                </div>
+                </div>
+                    <div>
+                        <button type="btn" class="btn-secondary w-100 shadow " > <span><h5 class="text-center">PAY : {{grandTotal}}$</h5></span></button>
+                    </div>
+                    </div>
+                </div>
+                
+         
+                <div *ngIf="!makepaymentStatus" class="mt-3" style="justify-content: center;align-items: center;display: flex;">
+                    <button type="button"(click)="cancel()" class="btn btn-secondary me-3" data-bs-dismiss="modal">Close</button>
+                    <button (click)="makepayment()" type="button" class="btn btn-dark">Make payment</button>
+                </div>
+                <div *ngIf="makepaymentStatus" >
+                    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+                   </div>
+               
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+
+
+<!-- sb-c47ags29451740@personal.example.com -->
+
+<!-- }Zh1qO=O -->

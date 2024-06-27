@@ -1,0 +1,34 @@
+<div>
+    <div class="m-2" >
+     <a routerLink="/">   <h4><i class="fa-solid fa-arrow-left fa-fade fa-xl"></i></h4></a>
+    </div>
+
+    <div class="container shadow p-4 mt-5 " style="background-color:rgb(248, 244, 246);">
+        <div class="row  ">
+            <div class="col-md-6">
+                <img style="width: 100%; height: auto;" src="https://assets-global.website-files.com/6185b708a2657014268d2eaf/62049596136dcd180cb747f5_loreal-model.jpeg" alt="">
+            </div>
+            <div class="col-md-6 ">
+                <h3 class="text-center">Login Here</h3>
+                <form   [formGroup]="loginForm" class="bg-light shadow text-center p-3 mt-3 ">
+                    <div class="mb-3 ">
+                        <input formControlName="email" type="email" class="form-control"   placeholder="Email">
+                        <div *ngIf="this.loginForm.get('email')?.errors && this.loginForm.get('email')?.touched "  class="fw-bolder"  >*Invalid email</div>
+                    </div>
+                       
+                    <div class="mb-3">
+                        <input   formControlName="password" type="password" class="form-control" placeholder="Password" >
+                        <div *ngIf="this.loginForm.get('password')?.errors && this.loginForm.get('password')?.touched "  >*Invalid password</div>
+                    </div>
+                    <div class="mb-4 form-check">
+                    </div>
+                    <button style="background-color: rgb(228, 186, 223);" (click)="login()" type="submit"   class="btn w-100"><h5>Log In</h5></button>
+                    <a routerLink="/user/register" style="text-decoration: none "> New to Here Register Now! </a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    
+</div>

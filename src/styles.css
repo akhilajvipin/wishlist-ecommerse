@@ -1,0 +1,225 @@
+
+*{
+  margin: 0px;
+  padding: 0px;
+  
+}
+* {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  
+}
+
+  header {
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url(https://kyliecosmetics.com/cdn/shop/files/Untitled-2.jpg?crop=center&height=1077&v=1716232089&width=1920);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    animation: rotateImages 4s forwards;
+  }
+
+  
+
+.Sevillana{
+ 
+    font-family: cursive;
+    font-weight: 400;
+    font-style: normal;
+  
+}
+
+.image-container {
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden;
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.image-container .hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .hover-image {
+  opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-top: 1px solid #dee2e6;
+  }
+
+  .table tbody td::before {
+    content: attr(data-label);
+    flex: 1;
+    /* font-weight: bold; */
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+  .table td,
+  .table th {
+    white-space: nowrap;
+  }
+}
+
+.custom-container {
+  border: 2px solid #ccc; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin-top: 20px; 
+  background-color: #f9f9f9; 
+  border-radius: 8px; 
+}
+.custom-container h3 {
+  font-size: 24px; 
+  margin-bottom: 20px; 
+}
+.custom-container h6 {
+  margin-bottom: 15px; 
+  font-size: 18px; 
+}
+.text-primary {
+  color: #007bff; 
+}
+
+
+
+
+.image-container {
+  position: relative;
+}
+
+.wishlist-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.wishlist-icon i {
+  color: rgb(177, 20, 80);
+  font-size: 1.5rem;
+}
+
+.card-body h5 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.card-body p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-image {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container:hover .hover-image {
+  opacity: 1;
+}
+
+.wishlist-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.card {
+  position: relative;
+}
+
+
+/* body {
+  padding-top: 50px; 
+} */
+
+
+
+
+
+
+
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import'../node_modules/@angular/material/prebuilt-themes/indigo-pink.css'
+
+
+
+

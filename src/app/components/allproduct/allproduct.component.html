@@ -1,0 +1,98 @@
+ 
+
+<app-header></app-header>
+         
+        <div class="mt-2 container-fluid" style="padding-top: 50px;">
+            <div style="background-color: rgb(228, 168, 206);" >
+                <h3 class="text-center" style="font-family: cursive;">
+                    <i class="fa-solid fa-star fa-sm" style="color: #00040a;"></i>
+                    <i class="fa-solid fa-star fa-sm" style="color: #00040a;"></i>
+                    Enjoy Our Great International Shipping Rates
+                    <i class="fa-solid fa-star fa-sm" style="color: #00040a;"></i>
+                    <i class="fa-solid fa-star fa-sm" style="color: #00040a;"></i>
+                </h3>
+            </div>
+            <header class="bg-dark ">
+                
+                <div class="container px-4 px-lg-5 ">
+                    <img src="https://st.depositphotos.com/26727728/51461/i/450/depositphotos_514617740-stock-photo-wish-list-text-abstract-colorful.jpg" alt="" class="img-fluid animated-image">
+                </div>
+            </header>
+            <h2 class="text-center mt-4" style="color: rgb(194, 168, 196);">BEST SELLERS</h2>
+            <h5 class="text-center">Luxury Personal Care<i class="fa-brands fa-d-and-d fa-lg" style="color: #f0e6b2;"></i>Products quality </h5>
+        
+          
+         <div class="row justify-content-center mt-3">
+            <div class="col-12 col-md-10 col-lg-8">
+                <form class="d-flex flex-column flex-md-row align-items-center">
+                    <input (keyup)="search($event)" type="search" class="form-control mt-1 mb-2 mb-md-0" style="background-color: rgb(240, 241, 243);" placeholder="Search Products" />
+                    <select (change)="onSortChange($event)" class="form-select ms-md-2 w-100 w-md-auto">
+                        <option value="">Sort By</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="name-asc">Name: A to Z</option>
+                        <option value="name-desc">Name: Z to A</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+
+         
+         <section class="py-3">
+                <div class="container-fluid px-4 px-lg-5 mt-2" style="background-color: rgb(248, 244, 246);">
+                    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                        <div *ngFor="let product of filteredProducts" class="col mb-5">
+                            <div class="card h-100 shadow mt-3">
+                                <div class="image-container">
+                                    <img class="card-img-top img-fluid" [src]="product.images[0]" alt="..." />
+                                    <div class="hover-image" [style.background-image]="'url(' + product.images[1] + ')'"></div>
+                                </div>
+                                <div class="wishlist-icon">
+                                    <button (click)="addwishlist(product)" type="button" class="btn">
+                                        <i class="fa-solid fa-heart fa-2xl"></i>
+                                    </button>
+                                </div>
+                                <div class="card-body p-4" style="background-color: rgb(250, 221, 235);">
+                                    <div class="text-center">
+                                        <h5 class="fw-bolder">{{ product.title }}</h5>
+                                        <h5 class="fw-bolder">{{ product.price }} ₹</h5>
+                                    </div>
+                                </div>
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent mt-2">
+                                    <div style="background-color: rgb(220, 190, 205);" class="text-center">
+                                        <a routerLink="view/{{product.id}}" class="btn btn-light btn-outline-dark mt-auto" href="#">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                
+          
+            </section>
+            <section class="page-section" id="services">
+                <div class="container">
+                    <div class="text-center mt-4"></div>
+                    <div class="row text-center mt-4">
+                        <div class="col-md-4 mb-4">
+                            <img class="img-fluid" style="width: 100%; height: auto;" src="https://cdn2.primor.eu/media/contentmanager/content/09112023-ome_categoria-07.webp" alt="">
+                            <h4 class="my-3"></h4>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <img class="img-fluid" style="width: 100%; height: auto;" src="https://cdn2.primor.eu/media/contentmanager/content/09112023-ome_categoria-01.webp" alt="">
+                            <h4 class="my-3"></h4>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <img class="img-fluid" style="width: 100%; height: auto;" src="https://cdn2.primor.eu/media/contentmanager/content/09112023-ome_categoria-02.webp" alt="">
+                            <h4 class="my-3"></h4>
+                        </div>
+                    </div>
+                    <div style="background-color: rgb(204, 201, 203);" class="p-3">
+                        <h4 class="text-center" style="font-family: cursive;">Please be careful of fraudulent calls & SMSes! Wishlist will never call you with offers pertaining to free gifts or prizes or ask for payments through links.</h4>
+                    </div>
+                </div>
+            </section>
+            <app-footer></app-footer>
+        </div>
+        

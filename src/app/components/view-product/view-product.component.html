@@ -1,0 +1,91 @@
+<app-header></app-header>
+
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7">
+
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" data-mdb-carousel-init>
+                <div class="carousel-inner">
+                  <div class="carousel-item active " data-bs-interval="10000">
+                    <img  [src]="product.images[0]" class="d-block w-75" alt="Wild Landscape"/>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img [src]="product.images[1]" class="d-block w-75" alt="Camera"/>
+                  </div>
+                  <div class="carousel-item">
+                    <img [src]="product.images[2]" class="d-block w-75" alt="Exotic Fruits"/>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              
+              
+        </div>
+        <div class="col-lg-5 mt-3">
+            <h6 class="text-center text-primary">Id :{{product._id}}</h6>
+            <h1 style="color: crimson; " class="font-weight text-center fw-bolder">{{product.title}}</h1> 
+            <h5 class="text-center">{{product.count}}g</h5>
+            <h5 class="text-center" >Rating : {{product.rating.value}}<span style="color: rgb(233, 168, 226);"> <i class="fa-solid fa-star"></i></span></h5>
+            <P class="text-center">  {{product.description}}</P>
+            <div class=" m-1">
+                <button class="btn" (click)="addwishlist()"><i class="fa-solid fa-heart fa-beat fs-2" style="color: #f4cae3;"></i></button>
+              <button (click)="addTocart(product)" class="btn"><i class="fa-solid m-5 fa-bag-shopping fa-beat fs-2" style="color: #010a19;"></i></button>  
+              <a class="btn btn-dark" ><h6>Price: {{product.price}} ₹</h6></a>
+
+            </div>
+            <div>
+              <h3 class="text-center">Review</h3>
+              <h5 class="text-center">{{product.rating.reviewer}}({{product.rating.value}}<i class="fa-solid fa-star"></i>) <span style="color: blueviolet;"><h6><i class="fa-solid fa-check"></i> Verified Purchaser</h6> </span> </h5>
+              <p class="text-center">"{{product.rating.review}}" </p>
+              <p class="text-center">{{product.rating.date}}</p>
+
+            </div>
+           
+        </div>
+    </div>
+    <div style="background-color: #c79de0;" class="card text-white  my-5 py-4 text-center">
+        <div class="card-body"><p class="text-white m-0"></p></div>
+    </div>
+    <div class="row gx-4 gx-lg-5">
+        <div class="col-md-4 mb-5">
+            <div class="card ">
+                <div class="card-body text-center p-2">
+                    <h6 class="card-title">vegan</h6>
+                    <img style="width: 70px;" [src]="product.ingredients[0] " alt="img">
+                </div>
+
+                <!-- <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div> -->
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card ">
+                <div class="card-body text-center p-2">
+                    <h6 class="card-title">Cruelty free</h6>
+                    <img style="width: 70px;" [src]="product.ingredients[1] " alt="img">
+                </div>
+                <!-- <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div> -->
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card ">
+                <div class="card-body text-center p-2">
+                    <h6 class="card-title">Clean</h6>
+                    <img style="width: 70px;" [src]="product.ingredients[2] " alt="img">
+
+                </div>
+                <!-- <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div> -->
+               
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+  

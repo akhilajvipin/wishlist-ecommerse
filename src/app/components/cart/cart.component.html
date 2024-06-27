@@ -1,0 +1,102 @@
+<app-header></app-header>
+
+
+<div class="container mt-5 p-3">
+  <div class="row mt-3" *ngIf="products.length !== 0">
+    <div class="col-12">
+      <h1 class="rounded text-center" style="color: rgb(204, 153, 252);">
+        Shopping <span style="color: rgb(241, 169, 218);">Cart</span>
+      </h1>
+    </div>
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table align-middle mb-0 bg-white shadow mt-3">
+          <thead class="bg-light">
+            <tr>
+              <th class="text-center">Product</th>
+              <th class="text-center">Quantity</th>
+              <th class="text-center">Price</th>
+              <th class="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products">
+              <td>
+                <div class="d-flex align-items-center">
+                  <img [src]="product.images[0]" alt="" class="img-fluid" style="width: 100px; height: 100px; object-fit: cover;" />
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{ product.title }}</p>
+                    <h6>Product id: {{ product.id }}</h6>
+                    <img class="img-fluid" style="width: 50px; height: 30px; object-fit: cover;" src="https://t4.ftcdn.net/jpg/04/77/40/89/360_F_477408960_bZBlon7D2wMSheS8ktw8O8pYyCCgSZVp.jpg" alt="" />
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-center justify-content-center">
+                  <button (click)="cartDecrement(product._id)" class="btn btn-secondary me-2">-</button>
+                  <input type="text" [value]="product.quantity" readonly class="form-control text-center w-75 me-2">
+                  <button (click)="cartincrement(product._id)" class="btn btn-secondary">+</button>
+                </div>
+              </td>
+              <td>
+                <h5 class="mb-0 text-center">{{ product.price }} ₹</h5>
+              </td>
+              <td class="text-center">
+                <button (click)="deletefromcart(product._id)" class="btn btn-secondary">
+                  <i class="fa-solid fa-trash fs-3"></i> Remove
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-12 mt-4">
+      <div class="p-3 text-center shadow bg-white rounded">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="termsCheck" required>
+          <label class="form-check-label" for="termsCheck">By continuing, you agree that you have read and accept our T&C</label>
+        </div>
+        <p id="date" class="form-control bg-white border-0 mt-3">Booking Date: {{ date }}</p>
+        <h3 style="background-color: rgb(150, 179, 204);" class="text-white p-2 rounded">Total Price: {{ totalPrice }} ₹</h3>
+        <p id="deliveryDate" class="form-control bg-white border-0 mt-3">
+          <i class="fa-solid fa-van-shuttle fa-lg"></i> Delivery in five days, {{ deliveryDate }} <span class="text-primary">FREE Delivery</span>
+        </p>
+        <button class="btn btn-dark mt-3" routerLink="/user/payment" (click)="checkout()">
+          <h3>Check Out</h3>
+        </button>
+      </div>
+    </div>
+    <div class="col-12 mt-3 text-center">
+      <p>
+        <i class="fa-solid fa-lock fa-lg"></i> Safe and Secure payment. Easy Returns. 100% Authentic product.
+      </p>
+    </div>
+  </div>
+
+  <div *ngIf="products.length == 0" class="row p-5 text-center mt-2 shadow" style="background-color: rgb(251, 247, 251);">
+    <h1 class="rounded text-center" style="color: rgb(204, 153, 252);">
+      Shopping <span style="color: rgb(241, 169, 218);">Cart</span>
+    </h1>
+    <div class="col-md-6 p-5" style="height: 350px; background-repeat:no-repeat; background-image:url(https://schoolville.com/assets/img/empty-cart-illustration.gif); background-size: cover;">
+
+    </div>
+    <div class="col-md-6 text-center d-flex justify-content-center align-items-center ">
+      <div class="">
+      <a routerLink="/">
+        <button class="btn btn-rounded btn-secondary p-4" type="button">Continue to Shopping</button>
+      </a>
+    </div>
+  </div>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+<app-footer></app-footer>

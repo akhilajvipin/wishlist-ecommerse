@@ -1,0 +1,91 @@
+
+
+<div class="container-fluid p-2 mt-4">
+  <div style="background-color: #eee7ea;">
+    <nav class="navbar navbar-expand-lg navbar-light  shadow fixed-top" style="background-color: rgb(244, 240, 243);">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" routerLink="/">
+          <img style="width: 90px; border-radius: 50%;" src="https://www.creativefabrica.com/wp-content/uploads/2021/03/19/Wish-List-Fonts-9762757-1.jpg" alt="">
+        </a>
+
+        <!-- Marquee bar starts here -->
+        <div class="w-100 d-flex justify-content-center align-items-center mt-1 mb-2 m-2">
+          <marquee class="text-light" style="width: 100%; background-color:rgb(187, 197, 214); padding: 10px; border-radius: 5px;">
+            <div class="justify-content-center align-items-center d-flex">
+              <img style="height: 40px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToFDXgRHOyAtVN3tP-pEHeHVwJXD8AsA2okw&s" alt="">
+              <h3 style="font-family: Playwrite US Trad, cursive; font-size: 20px;">...Welcome to our website! Enjoy our latest collections and offers. Stay tuned for more updates...</h3>
+              <img style="height: 40px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToFDXgRHOyAtVN3tP-pEHeHVwJXD8AsA2okw&s" alt="">
+            </div>
+          </marquee>
+        </div>
+        <!-- Marquee bar ends here -->
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-2 p-2">
+            <li class="nav-item" *ngIf="!loginUsername">
+              <a class="nav-link d-flex align-items-center" routerLink="/user/login">
+                <i class="fa-regular fa-user fa-2xl" style="color: #0b0d10;"></i>
+              </a>
+            </li>
+            <li class="nav-item d-flex align-items-center" *ngIf="loginUsername">
+              <button class="logout-button btn" (click)="logout()">
+                <span class="p-2"><i class="fa-solid fa-power-off fa-2xl" style="color: #070809;"></i></span>
+              </button>
+              <h5 class="ms-2 text-dark">{{loginUsername}}</h5>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a routerLink="/user/wishlist" class="nav-link d-flex align-items-center">
+                <span class="badge ms-2 text-dark" style="border: solid rgb(13, 13, 13);">{{wishlistcount}}</span>
+                <i class="fa-solid fa-heart fa-beat fa-xl" style="color: rgb(228, 143, 228);"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/user/cart" class="nav-link d-flex align-items-center">
+                <span class="badge ms-2 text-dark" style="border: solid rgb(17, 16, 16);">{{cartCount}}</span>
+                <i class="fa-solid fa-bag-shopping fa-beat fa-xl" style="color: rgb(19, 18, 19);"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav> 
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+ <!-- {
+  "id": 2,
+  "title": "",
+  "price": 2100,
+  "description": "",
+  "images": [
+      "",
+      "",
+      ""
+  ],
+  "ingredients": [
+      "https://kyliecosmetics.com/cdn/shop/files/Circle_KC_Icons_-_Vegan.png?…",
+      "https://kyliecosmetics.com/cdn/shop/files/Circle_KC_Icons_-_Cruelty_Fr…",
+      "https://kyliecosmetics.com/cdn/shop/files/Circle_KC_Icons_-_Clean.png?…"
+  ],
+  "rating": {
+      "value":5,
+      "reviewer": "sithu",
+      "date": "2023-05-11",
+      "review": "",
+      
+  }
+      "count": 100
+}  -->
